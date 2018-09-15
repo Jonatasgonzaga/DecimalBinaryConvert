@@ -102,7 +102,7 @@ namespace Conversor
                 }
 
                 else //caso -- ou quando -- 'inteiro' for menor que 1, 'bdint' será revertido, fazendo que as últimas casas do 
- //vetor sejam as primeiras sucessivamente. Por fim, 'bdint' é retornado como a resposta para conversão da parte inteira do número decimal.
+                    //vetor sejam as primeiras sucessivamente. Por fim, 'bdint' é retornado como a resposta para conversão da parte inteira do número decimal.
                 {
                 bdint.Reverse();
                 return bdint;
@@ -132,12 +132,22 @@ namespace Conversor
             //a mesma abre um leque de opções de comparações para o programador
 
 
-
-            Console.WriteLine("\t Conversor entre as bases decimal e binária");
-            Thread.Sleep(2000);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\t Obs: Se for inserir numero fracionado, no lugar da vígula use o ponto!" +
+                " Tecle ENTER para seguir");
+            Console.ReadLine();
+            Console.ResetColor();
             Console.Clear();
-            Console.WriteLine ("\t do Paulo Vida Boa, é claro!");
+            Thread.Sleep(3000);
+            Console.WriteLine("\t Conversor entre as bases decimal e binária do... ");
+            Thread.Sleep(4000);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine ("\t Paulo Vida Boa, é claro!");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\t #PraiaÉVida");
+            Console.ResetColor();
             Thread.Sleep(4000);
             Console.Clear();
             Console.WriteLine("\t Escolha uma das opções a seguir...");
@@ -161,17 +171,20 @@ namespace Conversor
                     foreach (var element in bdint) { Console.Write(element); } //imprimindo valores contidos em 'bdint'
                     
                     if (fracionado > 0)
-                    { // caso 'fracionado' for maior que zero, significa que há uma parte fracionada do número digitado pelo usuário.
+                    {   // caso 'fracionado' for maior que zero, significa que há uma parte fracionada do número digitado pelo usuário.
                          programa.ConversorDecFracionado(fracionado, bdfrac, freio); Console.Write(","); // chamando função para calcular converter 
                         //parte fracionada em decimal para binário
                         foreach (var element in bdfrac) { Console.Write(element); } //imprimindo valores contidos em 'bdfrac'
                     }
 
-                    
-                    Console.WriteLine();
+                    Console.ReadLine();
                     Console.WriteLine("Tecle ENTER para encerrar");
                     Console.ReadLine();
-                    
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Adeus :(");
+                    Thread.Sleep(2000);
+
+
                     break;
 
                 case "b":
@@ -246,7 +259,12 @@ namespace Conversor
 
                     Console.WriteLine();
                     Console.WriteLine("Tecle ENTER para encerrar");
-                    Console.ReadLine();
+                    Console.ReadLine();  
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Adeus :(");
+                    Thread.Sleep(2000);
+                  
+                   
 
 
                     break;
